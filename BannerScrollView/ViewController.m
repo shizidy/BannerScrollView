@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    BannerView *bannerView = [[BannerView alloc] initWithFrame:CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, kscreenWidth, 200) imageArray:@[@"第一张", @"第二张", @"第三张", @"第四张"]];
+    BannerView *bannerView = [[BannerView alloc] initWithFrame:CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, kscreenWidth, 150) imageArray:@[@"第一张", @"第二张", @"第三张", @"第四张"]];
     [self.view addSubview:bannerView];
     // Do any additional setup after loading the view, typically from a nib.
 }

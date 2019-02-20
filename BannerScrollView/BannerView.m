@@ -27,11 +27,13 @@
         self.imageArr = [NSMutableArray arrayWithArray:imageArr];
         [self.imageArr insertObject:self.imageArr[self.imageArr.count-1] atIndex:0];
         [self.imageArr removeObjectAtIndex:self.imageArr.count-1];
+        
+        [self addSubview:self.scrollView];
+        
         NSLog(@"%@", self.imageArr[0]);
         NSLog(@"%@", self.imageArr[1]);
         NSLog(@"%@", self.imageArr[2]);
         NSLog(@"%@", self.imageArr[3]);
-        [self addSubview:self.scrollView];
     }
     return self;
 }
@@ -39,9 +41,7 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat offsetX = scrollView.contentOffset.x/scrollView.frame.size.width;
     NSLog(@"%.1f", offsetX);
-    
     //调整数据源数据位置
-    
     if (offsetX==0) {
         [self.imageArr insertObject:self.imageArr[self.imageArr.count-1] atIndex:0];
         [self.imageArr removeObjectAtIndex:self.imageArr.count-1];
